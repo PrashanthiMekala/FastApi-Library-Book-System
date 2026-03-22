@@ -1,129 +1,153 @@
-# FastApi-Library-Book-System
-🚀 Project Overview
-The Library Book Management System is a backend application built using FastAPI that helps manage books, borrowing activities, and member interactions efficiently.
+# 📚 FastAPI Library Book System
 
-This system demonstrates core backend concepts such as API design, request validation, CRUD operations, workflow handling, filtering, searching, sorting, and pagination.
+## 🚀 Project Overview
 
-It simulates how a real-world library backend works by allowing users to:
+This project is a **Library Book Management System** built using FastAPI.
+It allows users to manage books, users, and borrowing activities through REST APIs.
 
-View available books Borrow books Return books Join a waiting queue when books are unavailable Search and filter books Browse books using sorting and pagination
+---
 
-All APIs are tested using Swagger UI for easy interaction and verification.
+## 🎯 Features
 
-🛠 Technologies Used
-Technology	Purpose
-Python	Core programming language
-FastAPI	Backend API framework
-Pydantic	Data validation and request models
-Uvicorn	ASGI server for running FastAPI
-Swagger UI	API testing and documentation
-📂 Project Structure
-library-book-management-system
-│
-├── main.py
-├── README.md
-└── screenshots
-      ├── Q1_home_route.png
-      ├── Q2_get_all_books.png
-      ├── Q3_get_book_by_id.png
-      ├── ...
-      └── Q20_browse_endpoint.png
-⚙️ Installation & Setup
-Follow these steps to run the project locally.
+* 📌 User Management (Create, View, Update, Delete)
+* 📌 Book Management (Add, View, Update, Delete)
+* 📌 Borrow & Return Books (Workflow)
+* 📌 Search Books
+* 📌 Pagination Support
+* 📌 API Testing with Swagger UI
 
-1️⃣ Create Virtual Environment
-python3 -m venv venv
-2️⃣ Activate Virtual Environment
-Mac/Linux:
+---
 
-source venv/bin/activate
-Windows:
+## 🛠️ Tech Stack
 
-venv\Scripts\activate
-3️⃣ Install Dependencies
+* Python
+* FastAPI
+* Uvicorn
+* Pydantic
+
+---
+
+## 📂 Project Structure
+
+```
+FastApi-Library-Book-System/
+│── main.py
+│── models.py
+│── database.py
+│── utils.py
+│── Screenshots/
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
+
+```
+git clone https://github.com/your-username/FastApi-Library-Book-System.git
+cd FastApi-Library-Book-System
+```
+
+### 2. Install Dependencies
+
+```
 pip install fastapi uvicorn
-4️⃣ Run FastAPI Server
-python3 -m uvicorn main:app --reload
-5️⃣ Open Swagger API Docs
+```
+
+### 3. Run Server
+
+```
+uvicorn main:app --reload
+```
+
+---
+
+## 🌐 API Documentation
+
+Open in browser:
+
+```
 http://127.0.0.1:8000/docs
-📌 API Features Implemented
-🔹 Basic APIs
-Home route
-Get all books
-Get book by ID
-Books summary statistics
-🔹 Borrow Management
-Borrow books
-View borrow records
-Borrow queue system
-Return books and auto-assign to waiting members
-🔹 CRUD Operations
-Add new book
-Update book genre and availability
-Delete book (restricted if borrowed)
-Duplicate title validation
-🔹 Helper Functions
-Custom helper functions were implemented to keep the code modular and readable:
+```
 
-find_book()
-calculate_due_date()
-filter_books_logic()
-🔍 Advanced API Features
-Search
-Books can be searched using keywords across:
+👉 Use Swagger UI to test all APIs.
 
-Title
-Author
-Example:
+---
 
-/books/search?keyword=python
-Sorting
-Books can be sorted by:
+## 🔁 API Endpoints
 
-title
-author
-genre
-Example:
+### 👤 Users
 
-/books/sort?sort_by=author&order=desc
-Pagination
-Books can be browsed page-wise.
+* POST /users → Create user
+* GET /users → Get all users
+* PUT /users/{id} → Update user
+* DELETE /users/{id} → Delete user
+
+---
+
+### 📚 Books
+
+* POST /books → Add book
+* GET /books → Get books (search & pagination)
+* PUT /books/{id} → Update book
+* DELETE /books/{id} → Delete book
+
+---
+
+### 🔄 Borrow System
+
+* POST /borrow → Borrow book
+* GET /borrow → View borrowed books
+* DELETE /borrow → Return book
+
+---
+
+## 🔍 Search & Pagination
 
 Example:
 
-/books/page?page=1&limit=3
-Combined Browse Endpoint
-This endpoint combines:
+```
+/books?search=python&page=1&limit=5
+```
 
-Search
-Sorting
-Pagination
-Example:
+---
 
-/books/browse?keyword=python&sort_by=title&page=1&limit=2
-Multi-Step Workflow
-This project simulates a real library workflow:
+## 📸 Screenshots
 
-Borrow Book
-      ↓
-Book becomes unavailable
-      ↓
-Users join waiting queue
-      ↓
-Book returned
-      ↓
-First queued user automatically assigned the book
-API Testing
-All APIs were tested using Swagger UI.
+Add your screenshots here:
 
-Example endpoints tested:
+```
+Screenshots/swagger-ui.png
+Screenshots/create-book.png
+Screenshots/borrow-book.png
+```
 
-/books
-/books/{book_id}
-/books/filter
-/books/search
-/books/page
-/books/browse
-/borrow
-/return/{book_id}
-/queue/add
+---
+
+## 🎯 Learning Outcomes
+
+* Built REST APIs using FastAPI
+* Implemented CRUD operations
+* Used Pydantic for validation
+* Designed backend workflow (borrow system)
+* Practiced API testing using Swagger
+
+---
+
+## 📌 Conclusion
+
+This project demonstrates a complete backend system for managing a library using FastAPI with real-world API features.
+
+---
+
+## 🔗 Author
+
+Your Name
+
+GitHub: https://github.com/your-username
+
+
+
+
+
